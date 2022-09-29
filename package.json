@@ -1,0 +1,11 @@
+{
+  "name": "jaunie-plantes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jmdtc",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.26.1",
+    "xlsx": "^0.18.5"
+  }
+}
