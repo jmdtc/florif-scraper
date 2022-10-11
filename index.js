@@ -210,12 +210,17 @@ async function main() {
   const page = await browser.newPage();
 
   let result = [];
+  let chunkNumber = 1;
   for (const chunk of chunks) {
     // faut changer l'url de temps en temps pcq elle est dynamique cheloue
-    const temp = await finalScraper({ chunk, page, path: "" }).catch((_) =>
-      exportToExcel(result)
-    );
+    const temp = await finalScraper({
+      chunk,
+      page,
+      path: "8BQAAECZ4cZXbWxxcndGTVRvBgA",
+    }).catch((_) => exportToExcel(result));
     result = result.concat(temp);
+    console.log((chunkNumber / chunks.length) * 100);
+    chunkNumber++;
   }
   exportToExcel(result);
   await browser.close();
